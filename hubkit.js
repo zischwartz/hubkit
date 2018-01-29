@@ -25,9 +25,10 @@ if (typeof require !== 'undefined') {
     options = defaults({}, options);
     defaults(options, Hubkit.defaults);
     // NodeJS doesn't set a userAgent by default but GitHub requires one.
-    if (typeof require !== 'undefined' && !options.userAgent) {
-      options.userAgent = 'Hubkit';
-    }
+    // XXX Removed by Zach, as require is defined by webpack
+    // if (typeof require !== 'undefined' && !options.userAgent) {
+    //   options.userAgent = 'Hubkit';
+    // }
     this.defaultOptions = options;
   };
 
